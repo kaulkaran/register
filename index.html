@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QualtSpire Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #343a40;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        p {
+            text-align: center;
+            color: #6c757d;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: 500;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #495057;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+        }
+        input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+        .checkbox-group {
+            display: block;
+        }
+        .radio-group label, .checkbox-group label {
+            margin-bottom: 0;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>QualtSpire Registration Form</h2>
+        <p>Welcome to QualtSpire - Student Details Form</p>
+        <p>Thank you for your interest in QualtSpire! We specialize in connecting talented students like you with top multinational companies for internship opportunities.</p>
+        <p>Please fill out this form with accurate and up-to-date details to help us match you with the best opportunities. Your information will remain confidential and will only be shared with potential employers for relevant internship roles.</p>
+        <p>Let’s build your future together!</p>
+        <hr>
+        <br>
+        <form id="registrationForm" autocomplete="off" method="post" name="google-sheet">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="graduationYear">Graduation Year</label>
+                <input type="number" id="graduationYear" name="graduationYear" placeholder="Enter your graduation year" required>
+            </div>
+            <div class="form-group">
+                <label>Have any work experience before?</label>
+                <div class="radio-group">
+                    <input type="radio" id="experienceYes" name="experience" value="Yes" required>
+                    <label for="experienceYes">Yes</label>
+                    <input type="radio" id="experienceNo" name="experience" value="No" required>
+                    <label for="experienceNo">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <input type="radio" id="genderMale" name="gender" value="Male" required>
+                    <label for="genderMale">Male</label>
+                    <input type="radio" id="genderFemale" name="gender" value="Female" required>
+                    <label for="genderFemale">Female</label>
+                    <input type="radio" id="genderOther" name="gender" value="Other" required>
+                    <label for="genderOther">Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fieldOfInterest">Field of Interest</label>
+                <select id="fieldOfInterest" name="fieldOfInterest" required>
+                    <option value="">Select an option</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Application Development">Application Development</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                    <option value="Data Analyst">Data Analyst</option>
+                    <option value="Data Scientist">Data Scientist</option>
+                    <option value="HR & IT">HR & IT</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Editor">Editor</option>
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="Database Engineer">Database Engineer</option>
+                    <option value="Consultancy Services">Consultancy Services</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Content Writer">Content Writer</option>
+                    <option value="Editorial Writer">Editorial Writer</option>
+                    <option value="Manager Roles">Manager Roles</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxa1dHiyKeIH7JrxUWTkl_nsLliJ1HxIS-7k98yc3XKR4WCnOfBb8EtgcJw-yjSDmmQ/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Registering with us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
